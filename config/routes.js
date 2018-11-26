@@ -2,6 +2,25 @@
 const template = require("../controllers/template.js")
 module.exports = function(app){
 
-  app.get('/', template.index);
-  app.post('/createname', template.createName);
+  //LOGIN AND REGISTER
+  app.get('/', login.index);
+  app.get('/login', login.login_page);
+  app.get('/register', login.register_page);
+  app.post('/login', login.login);
+  app.post('/register', login.register);
+/*
+app.use(authMiddleware);
+
+}
+
+function authMiddleware (req, res, next){
+  if(!req.session.user_id){
+      res.redirect('/');
+  }
+      else{
+          next();
+         
+      }
+  }
+  */
 }
