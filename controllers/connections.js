@@ -4,7 +4,6 @@ module.exports = {
   yes: (req, res) =>{
     knex('connections').where('match_two_user_id', req.session.user.id).then((second) => {
       if (second.length >= 1) {
-        console.log(second);
         for(let i = 0; i < second.length; i++) {
           if(second[i]['match_one_user_id'] == req.params.id) {
             knex('connections').update({connected: true}).where('id', second[i].id).then(() => {
@@ -36,7 +35,6 @@ module.exports = {
     } else {
       req.session.nonConnections = [Number(req.params.id)]
     }
-    console.log(req.session.nonConnections);
     res.redirect('/dashboard')
   },
 }
