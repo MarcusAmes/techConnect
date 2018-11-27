@@ -32,9 +32,9 @@ module.exports = {
   },
   no: (req, res) =>{
     if (req.session.nonConnections){
-      req.session.nonConnections.push(req.params.id)
+      req.session.nonConnections.push(Number(req.params.id))
     } else {
-      req.session.nonConnections = [req.params.id]
+      req.session.nonConnections = [Number(req.params.id)]
     }
     console.log(req.session.nonConnections);
     res.redirect('/dashboard')
