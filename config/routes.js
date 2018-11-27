@@ -17,6 +17,9 @@ module.exports = function(app){
 
 //DASHBOARD
   app.get('/dashboard', dashboard.admin);
+  
+// USER PROFILE
+app.get('/profile', profile.view)
 
   //USER_TWO_PROFILE
   app.get('/user_two_profile/:id', user_two_profile.index);
