@@ -1,6 +1,7 @@
 //Update the name of the controller below and rename the file.
 const login = require("../controllers/login.js");
 const profile = require("../controllers/profile.js");
+const user_two_profile = require("../controllers/user_two_profile.js");
 module.exports = function(app){
 
   //LOGIN AND REGISTER
@@ -13,7 +14,10 @@ module.exports = function(app){
 
   app.use(authMiddleware);
 
-  app.get('/dashboard', profile.admin)
+
+
+  //USER_TWO_PROFILE
+  app.get('/user_two_profile/:id', user_two_profile.index);
 
 }
 

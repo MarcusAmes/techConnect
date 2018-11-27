@@ -5,8 +5,17 @@
     <title>Profile</title>
   </head>
   <body>
-    <% for (let key in user) { %>
-      <p><%= key %>: <%= user[key] %></p>
-    <% } %>
+    <h1>techConnect</h1>
+    <a href="/matches">Matches</a>
+    <a href="/messages">Messages</a>
+    <a href="/dashboard">No</a>
+    <a href="/dashboard">Yes</a>
+    <% for(let i = 0; i < users.length; i++) { %>
+      <h2><%= `${users[i].fname} ${users[i].lname}` %></h2>
+      <img src="<%= users[i].img_url %>" alt="profile_img">
+      <h3><%= users[i].age %></h3>
+      <a href="/user_two_profile/<%= users[i].id %>">View Profile</a>
+  <%  } %>
+  <h3>tC</h3>
   </body>
 </html>
