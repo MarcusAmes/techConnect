@@ -8,14 +8,17 @@
     <h1>techConnect</h1>
     <a href="/matches">Matches</a>
     <a href="/messages">Messages</a>
-    <a href="/dashboard">No</a>
-    <a href="/dashboard">Yes</a>
-    <% for(let i = 0; i < users.length; i++) { %>
-      <h2><%= `${users[i].fname} ${users[i].lname}` %></h2>
-      <img src="<%= users[i].img_url %>" alt="profile_img">
-      <h3><%= users[i].age %></h3>
-      <a href="/user_two_profile/<%= users[i].id %>">View Profile</a>
-  <%  } %>
+    <a href="/logout">Logout</a>
+      <% if (users[0]) { %>
+      <h2><%= `${users[0].fname} ${users[0].lname}` %></h2>
+      <img src="<%= users[0].img_url %>" alt="profile_img">
+      <h3><%= users[0].age %></h3>
+      <a href="/user_two_profile/<%= users[0].id %>">View Profile</a>
+      <a href="/no/<%= users[0].id %>">No</a>
+      <a href="/yes/<%= users[0].id %>">Yes</a>
+      <% } else { %>
+        <h4>No more people</h4>
+      <% } %>
   <h3>tC</h3>
   </body>
 </html>

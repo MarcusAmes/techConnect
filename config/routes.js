@@ -3,6 +3,7 @@ const login = require("../controllers/login.js");
 const profile = require("../controllers/profile.js");
 const dashboard = require("../controllers/dashboard.js");
 const user_two_profile = require("../controllers/user_two_profile.js");
+const connections = require("../controllers/connections.js");
 module.exports = function(app){
 
   //LOGIN AND REGISTER
@@ -17,6 +18,12 @@ module.exports = function(app){
 
 //DASHBOARD
   app.get('/dashboard', dashboard.admin);
+  app.get('/no/:id', connections.no);
+  app.get('/yes/:id', connections.yes);
+  app.get('/logout', login.logout);
+  
+// USER PROFILE
+app.get('/profile', profile.view)
 
 //USER_TWO_PROFILE
 app.get('/user_two_profile/:id', user_two_profile.index);
