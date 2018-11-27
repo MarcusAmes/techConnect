@@ -18,11 +18,11 @@ module.exports = function(app){
 //DASHBOARD
   app.get('/dashboard', dashboard.admin);
 
-  //USER_TWO_PROFILE
-  app.get('/user_two_profile/:id', user_two_profile.index);
+//USER_TWO_PROFILE
+app.get('/user_two_profile/:id', user_two_profile.index);
 
 
-}
+} 
 
 function authMiddleware (req, res, next){
   if(!req.session.user){
