@@ -3,6 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Profile</title>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+        
 
     <style>
         .container, h3{
@@ -28,9 +34,13 @@
       button:hover{
       background-color:#ccc;
       color:#000;
-   
    }
-  
+   .bio{
+     position:relative;
+     float:left;
+     top:-2px;
+   }
+   textarea{margin-top:4px; margin-left:40px;}
     </style>
   </head>
   <body>
@@ -42,7 +52,7 @@
     <form class="" action="/update/<%=user.id%>" method="post">
      <label>First Name: <input type="text" name="fname" value="<%=user.fname%>">
       </label><label>Last Name: <input type="text" name="lname" value="<%=user.lname%>">
-     </label><label> Introduction<textarea name="bio" rows="8" cols="20"  value="<%=user.bio%>"></textarea>
+     </label><label><div class="bio"> Bio: </div><textarea name="bio" rows="8" cols="20"><%=user.bio %></textarea>
      </label><label>Age: <input required type="number" name="age"  value="<%=user.age%>" min="18">
      </label><label>Zipcode: <input maxlength="5" minlength="5" type="text" name="zipcode"  value="<%=user.zipcode%>">
      </label><label>Image Url:<input id="img_url" type="text" name="img_url"  value="<%=user.img_url%>">
