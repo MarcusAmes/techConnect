@@ -7,33 +7,21 @@ module.exports = {
       let users = {};
       knex('connections').where('match_one_user_id', user.id).then((matches) => {
         for (let m = 0; m < matches.length; m++) {
-          if(req.session.nonConnections) {
-            if(!req.session.nonConnections.includes(matches[m].match_two_user_id)) {
-              req.session.nonConnections.push(matches[m].match_two_user_id)
-            }
-          } else {
-            req.session.nonConnections = [matches[m].match_two_user_id]
+          if(!req.session.nonConnections.includes(matches[m].match_two_user_id)) {
+            req.session.nonConnections.push(matches[m].match_two_user_id)
           }
         }
         knex('connections').where('match_two_user_id', user.id).then((secondMatches) => {
           for (let sM = 0; sM < secondMatches.length; sM++) {
-            if (req.session.nonConnections) {
-              if(secondMatches[sM].connected == true) {
-                req.session.nonConnections.push(secondMatches[sM].match_one_user_id)
-              }
-            } else {
-              if(secondMatches[sM].connected == true) {
-                req.session.nonConnections = [secondMatches[sM].match_one_user_id]
-              }
+            if(secondMatches[sM].connected == true) {
+              req.session.nonConnections.push(secondMatches[sM].match_one_user_id)
             }
           }
           for (let i = 0; i < results.length; i++) {
             let non = false;
             if (user.id != results[i].id) {
-              if(req.session.nonConnections) {
-                if (req.session.nonConnections.includes(results[i].id)) {
-                  non = true;
-                }
+              if (req.session.nonConnections.includes(results[i].id)) {
+                non = true;
               }
               if (!non) {
                 users[results[i].id] = results[i];
@@ -47,7 +35,7 @@ module.exports = {
             let scores = {}
             for (let ind = 0; ind < usersInterests.length; ind++) {
               if(usersInterests[ind]['user_id'] != user.id) {
-                if(req.session.nonConnections && req.session.nonConnections.includes(usersInterests[ind]['user_id'])) {
+                if(req.session.nonConnections.includes(usersInterests[ind]['user_id'])) {
                   continue;
                 }
                 scores[usersInterests[ind].user_id] = 0;

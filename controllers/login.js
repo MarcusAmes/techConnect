@@ -17,6 +17,7 @@ module.exports = {
         let user = results[0]
         if(user.password === req.body.log_password) {
           req.session.user = user;
+          req.session.nonConnections = [];
           req.session.save(()=>{
             res.redirect('/dashboard');
           })
@@ -44,6 +45,7 @@ module.exports = {
     knex('users').update(req.body).where('id', req.params.id).then(() => {
       knex('users').where('id', req.params.id).then((results) => {
         req.session.user = results[0];
+        req.session.nonConnections = [];
         req.session.save(()=>{
           res.redirect('/dashboard');
         })
