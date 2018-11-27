@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Create Profile</title>
+    <style media="screen">
+      .container {
+        display: flex;
+        justify-content: center;
+      }
+      input {
+        display: block;
+        margin: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form class="" action="/update/<%=user_id%>" method="post">
+        <input required type="text" name="username" placeholder="Username">
+        <input type="text" name="fname" placeholder="First Name">
+        <input type="text" name="lname" placeholder="Last Name">
+        <textarea name="bio" rows="8" cols="80" placeholder="Bio"></textarea>
+        <input required type="number" name="age" placeholder="Age" min="18">
+        <input maxlength="5" minlength="5" type="text" name="zipcode" placeholder="ZipCode">
+        <input id="img_url" type="text" name="img_url" placeholder="img_url">
+        <button type="submit" name="">Submit</button>
+      </form>
+    </div>
+    <script type="text/javascript">
+      const myForm = document.querySelector('form');
+
+      myForm.addEventListener('submit', function () {
+          let input = myForm.querySelector('#img_url');
+          if (!input.value) {
+            input.name = '';
+          }
+      });
+    </script>
+  </body>
+</html>
