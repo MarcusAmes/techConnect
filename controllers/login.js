@@ -41,7 +41,6 @@ module.exports = {
     }
   },
   update: (req, res) => {
-    let { }
     knex('users').update(req.body).where('id', req.params.id).then(() => {
       knex('users').where('id', req.params.id).then((results) => {
         req.session.user = results[0];
