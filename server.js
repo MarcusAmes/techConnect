@@ -7,6 +7,7 @@ app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 require('./config/sessions')(app);
+app.use('/static', express.static(path.join(__dirname, 'public')))
 
 app.set('view engine', 'ejs');
 

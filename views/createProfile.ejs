@@ -18,21 +18,26 @@
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="/static/stylesheets/tc.css">
+  <link href="https://fonts.googleapis.com/css?family=Miriam+Libre" rel="stylesheet">
           
 
   </head>
   <body>
-    <h1>Create Profile</h1>
-    <div class="container">
-      <form class="" action="/update/<%=user_id%>" method="post">
-        <input required type="text" name="username" placeholder="Username">
-        <input type="text" name="fname" placeholder="First Name">
-        <input type="text" name="lname" placeholder="Last Name">
-        <textarea name="bio" rows="12" cols="60" placeholder="Bio"></textarea>
-        <input required type="number" name="age" placeholder="Age" min="18">
-        <input maxlength="5" minlength="5" type="text" name="zipcode" placeholder="ZipCode">
-        <input id="img_url" type="text" name="img_url" placeholder="img_url">
-        <button type="submit" name="">Submit</button>
+    <div class="create_profile_container">
+    <h1 class="create_profile_header">Create Profile</h1>
+    </div>
+      <form action="/update/<%=user_id%>" method="post">
+        <input class="create_profile_input" required type="text" name="username" placeholder="Username">
+        <input class="create_profile_input" type="text" name="fname" placeholder="First Name">
+        <input class="create_profile_input" type="text" name="lname" placeholder="Last Name">
+        <textarea class="create_profile_input_bio" name="bio" rows="12" cols="60" placeholder="Bio"></textarea>
+        <input class="create_profile_input" required type="number" name="age" placeholder="Age" min="18">
+        <input class="create_profile_input" maxlength="5" minlength="5" type="text" name="zipcode" placeholder="ZipCode">
+        <input class="create_profile_input" id="img_url" type="text" name="img_url" placeholder="img_url">
+        <div class="submit_btn_container">
+        <button class="submit_btn" type="submit" name="">Submit</button>
+      </div>
       </form>
     </div>
     <script type="text/javascript">

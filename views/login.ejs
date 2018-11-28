@@ -2,14 +2,21 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <link rel="stylesheet" href="/static/stylesheets/tc.css">
+    <link href="https://fonts.googleapis.com/css?family=Miriam+Libre" rel="stylesheet">
     <title>Login</title>
   </head>
   <body>
-    <h1>Login</h1>
-    <form class="" action="/login" method="post">
-      <input required type="text" name="log_username" placeholder="Username">
-      <input required type="password" name="log_password" placeholder="Password">
-      <button type="submit" name="">Login</button>
+    <div class="header_container">
+    <h1 class="login_header_pgtwo">Login</h1>
+    </div>
+    <form action="/login" method="post">
+      <input class="login_input" required type="text" name="log_username" placeholder="Username">
+      <input class="login_input" required type="password" name="log_password" placeholder="Password">
+      <div class="login_btn_container">
+      <button class="login-btn" type="submit" name="">Login</button>
+      </div>
     </form>
   </body>
 </html>

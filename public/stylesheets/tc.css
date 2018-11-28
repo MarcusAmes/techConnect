@@ -1,0 +1,253 @@
+body {
+    background-color: #e0e0e0;
+}
+
+.tC-index {
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+    font-family: 'Miriam Libre', sans-serif;
+    letter-spacing: -6px;
+    background-color: #ff6f00;
+    border: 1px solid #ff6f00;
+    margin-top: 150px;
+    text-align: center;
+    font-size: 10em;
+}
+.slogan {
+    font-family: 'Miriam Libre', sans-serif;
+    text-align: center;
+    font-size: 2em;
+}
+
+.fas.fa-globe{
+    margin-left: 15px;
+    font-size: 0.9em;
+}
+
+.btn-container {
+    text-align: center !important;
+    margin-top: 200px;
+}
+
+.l-r-b {
+    font-family: 'Miriam Libre', sans-serif;
+    margin-right: 20px;
+    border-radius: 5px;
+    font-size: 2.5em;
+    color: white;
+    background-color: #ff6f00;
+    padding: 0px 8px;
+    margin-bottom: 50px !important;
+}
+
+  a:hover {
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.login_header_pgtwo{
+    font-family: 'Miriam Libre', sans-serif;
+    letter-spacing: -6px;
+    background-color: #ff6f00;
+    border-top: 1px solid #ff6f00;
+    border-bottom: 1px solid #ff6f00;;
+    margin-top: 150px;
+    text-align: center;
+    font-size: 80px;
+}
+
+.header_container{
+    width: 50%;
+    margin-left: 24%;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+}
+
+
+.login_input{
+    font-family: 'Miriam Libre', sans-serif;
+    background-color: #e0e0e0 !important;
+    margin-left: 24% !important;
+    color: black;
+    width: 50% !important;
+    text-align: center !important;
+}
+
+.login_btn_container{
+    margin: 15px 600px;
+}
+
+.login-btn{
+    font-family: 'Miriam Libre', sans-serif;
+    border-radius: 5px;
+    font-size: 1.3em;
+    color: white;
+    background-color: #ff6f00;
+    padding: 0px 8px;
+    box-shadow: 0px 0px 3px 0px rgba(187, 69, 69, 0) !important;
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.register_container{
+    width: 50%;
+    margin-left: 24%;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0);
+}
+
+.register_header_pgthree{
+    font-family: 'Miriam Libre', sans-serif;
+    letter-spacing: -6px;
+    background-color: #ff6f00;
+    border-top: 1px solid #ff6f00;
+    border-bottom: 1px solid #ff6f00;;
+    margin-top: 150px;
+    text-align: center;
+    font-size: 80px;
+}
+
+.register_input{
+    font-family: 'Miriam Libre', sans-serif;
+    background-color: #e0e0e0 !important;
+    margin-left: 24% !important;
+    color: black;
+    width: 50% !important;
+    text-align: center !important;
+}
+
+.register_btn_container{
+    margin: 15px 600px;
+}
+
+.register_btn{
+    font-family: 'Miriam Libre', sans-serif;
+    border-radius: 5px;
+    font-size: 1.3em;
+    color: white;
+    background-color: #ff6f00;
+    padding: 0px 8px;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0) !important;
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.create_profile_container{
+    margin-top: 0 !important;
+    width: 50%;
+    margin-left: 24%;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0);
+}
+
+.create_profile_header{
+    font-family: 'Miriam Libre', sans-serif;
+    letter-spacing: -6px;
+    background-color: #ff6f00;
+    border-top: 1px solid #ff6f00;
+    border-bottom: 1px solid #ff6f00;;
+    margin-top: 150px;
+    text-align: center;
+    font-size: 80px;
+}
+
+.create_profile_input{
+    font-family: 'Miriam Libre', sans-serif;
+    background-color: #e0e0e0 !important;
+    margin-left: 24% !important;
+    color: black;
+    width: 50% !important;
+    text-align: center !important;
+}
+
+.create_profile_input_bio{
+    font-family: 'Miriam Libre', sans-serif;
+    background-color: #e0e0e0 !important;
+    margin-left: 24% !important;
+    color: black;
+    width: 50% !important;
+    text-align: center !important;
+}
+
+.submit_btn_container{
+    margin: 15px 600px;
+}
+
+.submit_btn{
+    font-family: 'Miriam Libre', sans-serif;
+    border-radius: 5px;
+    font-size: 1.3em;
+    color: white;
+    background-color: #ff6f00;
+    padding: 0px 8px;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0) !important;
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.dashboard_header-container{
+    margin-top: 0 !important;
+    width: 50%;
+    margin-left: 24%;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0);
+}
+
+.dashboard_header{
+    font-family: 'Miriam Libre', sans-serif;
+    letter-spacing: -6px;
+    background-color: #ff6f00;
+    border-top: 1px solid #ff6f00;
+    border-bottom: 1px solid #ff6f00;;
+    margin-top: 150px;
+    font-size: 50px;
+}
