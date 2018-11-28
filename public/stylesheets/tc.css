@@ -82,6 +82,19 @@ body {
     padding: 0px 8px;
     box-shadow: 0px 0px 3px 0px rgba(187, 69, 69, 0) !important;
     transform: scale(1.1);
+    width: 30%;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus {
+  border-bottom-color: #ff6f00 !important;
+}
+
+button:focus {
+  background-color: #ff6f00 !important;
 }
 
 
@@ -128,15 +141,15 @@ body {
 
 
 .dashboard_fnln{
-    font-family: 'Miriam Libre', sans-serif; 
+    font-family: 'Miriam Libre', sans-serif;
     color: #546e7a;
     text-align: center;
 }
 
 .username{
-    font-family: 'Miriam Libre', sans-serif; 
-    color: #546e7a; 
-    text-align: center; 
+    font-family: 'Miriam Libre', sans-serif;
+    color: #546e7a;
+    text-align: center;
 }
 
 .profile_pic_container{

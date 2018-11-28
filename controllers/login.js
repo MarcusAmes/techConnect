@@ -18,7 +18,7 @@ module.exports = {
     knex('users').where('username', req.body.log_username).then((results) => {
       if (results.length >= 1) {
         let user = results[0]
-        if(user.password === req.body.log_password) {
+        if(user.password == req.body.log_password) {
           req.session.user = user;
           req.session.nonConnections = [];
           req.session.save(()=>{

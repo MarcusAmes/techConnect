@@ -2,10 +2,9 @@ const knex = require("../db/knex.js");
 
 module.exports = {
   view: (req, res) => {
-    console.log(req.session.user);
     res.render('profile', {user: req.session.user})
   },
-  
+
   edit: (req, res) => {
     knex('users').update(req.body).where('id', req.params.id).then(() => {
       knex('users').where('id', req.params.id).then((results) => {
