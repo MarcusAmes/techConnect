@@ -22,7 +22,7 @@
     <a href="/messages">Messages</a>
     <a href="/logout">Logout</a>
       <% if (users[0]) { %>
-      <h2><%= `${users[0].fname} ${users[0].lname}` %></h2>
+      <h2 class="user_name"><%= `${users[0].fname} ${users[0].lname}` %></h2>
       <img src="<%= users[0].img_url %>" alt="profile_img">
       <h3><%= users[0].age %></h3>
       <a href="/user_two_profile/<%= users[0].id %>">View Profile</a>
