@@ -127,27 +127,70 @@ body {
 
 
 
-.dashboard_fnln{
-    font-family: 'Miriam Libre', sans-serif; 
-    color: #546e7a;
-    text-align: center;
-}
-
-.username{
+.fnln_username{
     font-family: 'Miriam Libre', sans-serif; 
     color: #546e7a; 
-    text-align: center; 
+    text-align: center;
 }
 
 .profile_pic_container{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .dashboard_profile_pic{
-  max-height: 300px;
+border-top-left-radius: 20px; 
+border-top-right-radius: 20px;
+  height: 300px;
+  width: 300px;
 }
 
 .user_age{
-text-align: center;
+font-family: 'Miriam Libre', sans-serif; 
+color: white;
+}
+
+.yesno-container{
+    width: 20%;
+    display: flex;
+    align-items: center;
+}
+
+
+.yesno{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 50%;
+    width: 100%;
+    font-family: 'Miriam Libre', sans-serif; 
+    color: white;
+    font-size: 4em;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+
+.globe{
+color: white;
+}
+
+.view_profile{
+    font-family: 'Miriam Libre', sans-serif;
+    color: white;
+}
+
+.lucas{
+    display: flex;
+    justify-content: center;
+}
+
+.profile_age_globe{
+border-bottom-left-radius: 20px; 
+border-bottom-right-radius: 20px;
+width: 300px;
+background-color: #546e7a; 
+display: flex;
+justify-content: space-around;
+align-items: center;
 }

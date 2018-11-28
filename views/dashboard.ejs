@@ -28,18 +28,26 @@
       </div>
     </nav>
     <% if (users[0]) { %>
-      <h2 class="dashboard_fnln"><%= `${users[0].fname} ${users[0].lname}` %></h2>
-      <h5 class="username"> <%= users[0].username %></h5>
+      <h2 class="dashboard_fnln fnln_username"><%= `${users[0].fname} ${users[0].lname}` %></h2>
+      <h5 class="username fnln_username"> <%= users[0].username %></h5>
       <div class="profile_pic_container">
+        <div class="yesno-container">
+          <a class="yesno red darken-1" href="/no/<%= users[0].id %>">No</a>
+        </div>
         <img class="dashboard_profile_pic" src="<%= users[0].img_url %>" alt="profile_img">
+        <div class="yesno-container">
+        <a class="yesno green darken-1" href="/yes/<%= users[0].id %>">Yes</a>
       </div>
-      <h3 class="user_age"><%= users[0].age %></h3>
-      <a href="/user_two_profile/<%= users[0].id %>">View Profile</a>
-      <a href="/no/<%= users[0].id %>">No</a>
-      <a href="/yes/<%= users[0].id %>">Yes</a>
+      </div>
+      <div class="lucas">
+        <div class="profile_age_globe">
+          <h3 class="user_age"><%= users[0].age %></h3>
+          <h4 class="globe"><i class="fas fa-globe"></i></h4>
+          <a class="view_profile" href="/user_two_profile/<%= users[0].id %>">View Profile</a>
+        </div>
+      </div>
       <% } else { %>
         <h4>No more people</h4>
     <% } %>
-  <h3>tC</h3>
   </body>
 </html>
