@@ -271,3 +271,37 @@ body {
     text-align: center;
     font-size: 80px;
 }
+
+
+
+
+
+
+
+
+
+
+.dashboard_fnln{
+    font-family: 'Miriam Libre', sans-serif; 
+    color: #546e7a;
+    text-align: center;
+}
+
+.username{
+    font-family: 'Miriam Libre', sans-serif; 
+    color: #546e7a; 
+    text-align: center; 
+}
+
+.profile_pic_container{
+    display: flex;
+    justify-content: center;
+}
+
+.dashboard_profile_pic{
+  max-height: 300px;
+}
+
+.user_age{
+text-align: center;
+}
