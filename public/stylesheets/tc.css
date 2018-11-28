@@ -245,7 +245,6 @@ body {
     background-color: #ff6f00;
 }
 
-<<<<<<< HEAD
 
 .nav-header {
   font-family: 'Miriam Libre', sans-serif;
@@ -264,16 +263,6 @@ body {
   height: 50px;
   width: 50px;
 }
-=======
-.dashboard_header{
-    font-family: 'Miriam Libre', sans-serif;
-    letter-spacing: -6px;
-    background-color: #ff6f00;
-    border-top: 1px solid #ff6f00;
-    border-bottom: 1px solid #ff6f00;;
-    margin-top: 150px;
-    font-size: 50px;
-}
 
 .user_name{
     font-family: 'Miriam Libre', sans-serif;
@@ -282,4 +271,3 @@ body {
     text-align: center;
     font-size: 80px;
 }
->>>>>>> affccec0e27ea3e0f3b12df051e28ebac66f73ea

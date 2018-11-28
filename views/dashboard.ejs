@@ -15,7 +15,6 @@
 
   </head>
   <body>
-<<<<<<< HEAD
     <nav class="nav_header-container">
       <div class="nav-wrapper">
         <h3 class="nav-header" style="" >techConnect<i class="fas fa-globe"></i></h3>
@@ -30,16 +29,6 @@
     </nav>
     <% if (users[0]) { %>
       <h2><%= `${users[0].fname} ${users[0].lname}` %></h2>
-=======
-    <div class="dashboard_header_container">
-    <h1 class="dashboard_header">techConnect<i class="fas fa-globe"></i></h1>
-  </div>
-    <a href="/matches">Matches</a>
-    <a href="/messages">Messages</a>
-    <a href="/logout">Logout</a>
-      <% if (users[0]) { %>
-      <h2 class="user_name"><%= `${users[0].fname} ${users[0].lname}` %></h2>
->>>>>>> affccec0e27ea3e0f3b12df051e28ebac66f73ea
       <img src="<%= users[0].img_url %>" alt="profile_img">
       <h3><%= users[0].age %></h3>
       <a href="/user_two_profile/<%= users[0].id %>">View Profile</a>
