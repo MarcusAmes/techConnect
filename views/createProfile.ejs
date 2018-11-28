@@ -3,16 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>Create Profile</title>
-    <style media="screen">
-      .container {
-        display: flex;
-        justify-content: center;
-      }
-      input {
-        display: block;
-        margin: 4px;
-      }
-    </style>
     <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
 
@@ -20,12 +10,34 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   <link rel="stylesheet" href="/static/stylesheets/tc.css">
   <link href="https://fonts.googleapis.com/css?family=Miriam+Libre" rel="stylesheet">
-          
+
 
   </head>
   <body>
-    <div class="create_profile_container">
-    <h1 class="create_profile_header">Create Profile</h1>
+    <div class="container">
+      <div class="container">
+        <div class="header_container">
+          <h1 class="login_header">Create Profile</h1>
+        </div>
+        <form action="/createprofile" method="post">
+          <div class="container">
+            <input class="col s12" required type="text" name="username" placeholder="Username">
+            <input class="col s12" type="text" name="fname" placeholder="First Name">
+            <input class="col s12" type="text" name="lname" placeholder="Last Name">
+            <textarea class="" name="bio" rows="12" cols="60" placeholder="Bio"></textarea>
+            <input class="col s12" required type="number" name="age" placeholder="Age" min="18">
+            <input required class="col s12" maxlength="5" minlength="5" type="text" name="zipcode" placeholder="ZipCode">
+            <input class="col s12" id="img_url" type="text" name="img_url" placeholder="img_url">
+          </div>
+          <div class="login_btn_container">
+            <button class="login-btn" type="submit" name="">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- <div class="create_profile_container">
+      <h1 class="create_profile_header">Create Profile</h1>
     </div>
       <form action="/update/<%=user_id%>" method="post">
         <input class="create_profile_input" required type="text" name="username" placeholder="Username">
@@ -33,13 +45,13 @@
         <input class="create_profile_input" type="text" name="lname" placeholder="Last Name">
         <textarea class="create_profile_input_bio" name="bio" rows="12" cols="60" placeholder="Bio"></textarea>
         <input class="create_profile_input" required type="number" name="age" placeholder="Age" min="18">
-        <input class="create_profile_input" maxlength="5" minlength="5" type="text" name="zipcode" placeholder="ZipCode">
+        <input required class="create_profile_input" maxlength="5" minlength="5" type="text" name="zipcode" placeholder="ZipCode">
         <input class="create_profile_input" id="img_url" type="text" name="img_url" placeholder="img_url">
         <div class="submit_btn_container">
         <button class="submit_btn  button" type="submit" name="">Submit</button>
       </div>
       </form>
-    </div>
+    </div> -->
     <script type="text/javascript">
       const myForm = document.querySelector('form');
 
@@ -49,6 +61,10 @@
           input.name = '';
         }
       });
+      if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+      }
     </script>
+
   </body>
 </html>

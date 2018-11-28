@@ -11,6 +11,9 @@ module.exports = {
   register_page: (req, res) => {
     res.render("register");
   },
+  create_profile_page: (req, res) => {
+    res.render("createProfile", {user_id: req.params.id});
+  },
   login: (req, res) => {
     knex('users').where('username', req.body.log_username).then((results) => {
       if (results.length >= 1) {
@@ -35,7 +38,7 @@ module.exports = {
         email: req.body.reg_email,
         password: req.body.reg_password,
       }, '*').then((results)=>{
-        res.render('createProfile', {user_id: results[0].id})
+        res.redirect(`/createprofile/${results[0].id}`)
       })
     } else {
       res.redirect('/register')

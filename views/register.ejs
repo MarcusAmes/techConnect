@@ -10,20 +10,26 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   <link rel="stylesheet" href="/static/stylesheets/tc.css">
   <link href="https://fonts.googleapis.com/css?family=Miriam+Libre" rel="stylesheet">
-          
+
 
   </head>
   <body>
-      <div class="register_container">
-    <h1 class="register_header_pgthree">Register</h1>
+    <div class="container">
+      <div class="container">
+        <div class="header_container">
+          <h1 class="login_header">Register</h1>
+        </div>
+        <form action="/register" method="post">
+          <div class="container">
+            <input class="col s12" required type="email" name="reg_email" placeholder="Email">
+            <input class="col s12" required type="password" name="reg_password" placeholder="Password">
+            <input class="col s12" required type="password" name="reg_cPassword" placeholder="Confirm Password">
+          </div>
+          <div class="login_btn_container">
+            <button class="login-btn" type="submit" name="">Submit</button>
+          </div>
+        </form>
+      </div>
     </div>
-    <form action="/register" method="post">
-      <input class="register_input" required type="email" name="reg_email" placeholder="Email">
-      <input class="register_input" required type="password" name="reg_password" placeholder="Password">
-      <input class="register_input" required type="password" name="reg_cPassword" placeholder="Confirm Password">
-      <div class="register_btn_container">
-      <button class="register_btn button" type="submit" name="">Register</button>
-    </div>
-    </form>
   </body>
 </html>

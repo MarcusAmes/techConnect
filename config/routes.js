@@ -13,6 +13,7 @@ module.exports = function(app){
   app.post('/login', login.login);
   app.post('/register', login.register);
   app.post('/update/:id', login.update);
+  app.get('/createprofile/:id', login.create_profile_page);
 
   app.use(authMiddleware);
 

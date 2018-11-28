@@ -46,7 +46,14 @@ module.exports = {
           confirmedMatches.push(matches[i]);
         }
       }
-      res.render('matches', {user: user, confirmedMatches: confirmedMatches});
+      knex('connections').join('users', 'connections.match_one_user_id', 'users.id').where('match_two_user_id', user.id).then((matches2) => {
+        for ( let i = 0; i < matches2.length; i++) {
+          if (matches2[i].connected){
+            confirmedMatches.push(matches2[i]);
+          }
+        }
+        res.render('matches', {user: user, confirmedMatches: confirmedMatches});
+      })
     })
   }
 }
