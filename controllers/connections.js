@@ -37,4 +37,16 @@ module.exports = {
     }
     res.redirect('/dashboard')
   },
+  matches: (req, res) => {
+    let user = req.session.user;
+    let confirmedMatches = [];
+    knex('connections').join('users', 'connections.match_two_user_id', 'users.id').where('match_one_user_id', user.id).then((matches) => {
+      for ( let i = 0; i < matches.length; i++) {
+        if (matches[i].connected){
+          confirmedMatches.push(matches[i]);
+        }
+      }
+      res.render('matches', {user: user, confirmedMatches: confirmedMatches});
+    })
+  }
 }

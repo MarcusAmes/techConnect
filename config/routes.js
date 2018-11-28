@@ -21,15 +21,17 @@ module.exports = function(app){
   app.get('/no/:id', connections.no);
   app.get('/yes/:id', connections.yes);
   app.get('/logout', login.logout);
-  
+
 // USER PROFILE
 app.get('/profile', profile.view)
 
 //USER_TWO_PROFILE
 app.get('/user_two_profile/:id', user_two_profile.index);
 
+//MATCHES
+app.get('/matches', connections.matches);
 
-} 
+}
 
 function authMiddleware (req, res, next){
   if(!req.session.user){

@@ -12,6 +12,13 @@
   <link rel="stylesheet" href="/static/stylesheets/tc.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
+  <style media="screen">
+    .match {
+      border: 1px solid black;
+      margin: 30px;
+      padding: 5px;
+    }
+  </style>
 
   </head>
   <body>
@@ -19,24 +26,25 @@
       <div class="nav-wrapper">
         <h3 class="nav-header" style="" >techConnect<i class="fas fa-globe"></i></h3>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li class="active"><a href="/dashboard">Dashboard</a></li>
-          <li><a href="/matches">Matches</a></li>
+          <li><a href="/dashboard">Dashboard</a></li>
+          <li class="active"><a href="/matches">Matches/a></li>
           <li><a href="/messages">Messages</a></li>
           <li><a href="/logout">Logout</a></li>
           <li><a href="/profile"> <img class="small-image-circle nav-img" src="<%= user.img_url %>" alt="Profile"> </a></li>
         </ul>
       </div>
     </nav>
-    <% if (users[0]) { %>
-      <h2><%= `${users[0].fname} ${users[0].lname}` %></h2>
-      <img src="<%= users[0].img_url %>" alt="profile_img">
-      <h3><%= users[0].age %></h3>
-      <a href="/user_two_profile/<%= users[0].id %>">View Profile</a>
-      <a href="/no/<%= users[0].id %>">No</a>
-      <a href="/yes/<%= users[0].id %>">Yes</a>
-      <% } else { %>
-        <h4>No more people</h4>
+    <% if (confirmedMatches.length >= 1) {
+      for (let i = 0; i < confirmedMatches.length; i++) { %>
+        <div class="match">
+          <h4><%= confirmedMatches[i].username %></h4>
+          <img class="small-image-circle" src="<%= confirmedMatches[i].img_url %>" alt="Profile Image">
+          <h5>Age: <%= confirmedMatches[i].age %></h5>
+          <p><%= confirmedMatches[i].bio %></p>
+        </div>
+      <% }
+    } else { %>
+      <h1>You don't have any matches yet!</h1>
     <% } %>
-  <h3>tC</h3>
   </body>
 </html>
