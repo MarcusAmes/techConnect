@@ -28,19 +28,12 @@
       </div>
     </nav>
     <% if (users[0]) { %>
-<<<<<<< HEAD
-      <h2><%= users[0].username %></h2>
-      <h4><%= `${users[0].fname} ${users[0].lname}` %></h4>
-      <img src="<%= users[0].img_url %>" alt="profile_img">
-      <h3><%= users[0].age %></h3>
-=======
       <h2 class="dashboard_fnln"><%= `${users[0].fname} ${users[0].lname}` %></h2>
       <h5 class="username"> <%= users[0].username %></h5>
       <div class="profile_pic_container">
-      <img class="dashboard_profile_pic" src="<%= users[0].img_url %>" alt="profile_img">
-    </div>
+        <img class="dashboard_profile_pic" src="<%= users[0].img_url %>" alt="profile_img">
+      </div>
       <h3 class="user_age"><%= users[0].age %></h3>
->>>>>>> 48fd3029bf3a2a7b391bd4669756427ec6a85112
       <a href="/user_two_profile/<%= users[0].id %>">View Profile</a>
       <a href="/no/<%= users[0].id %>">No</a>
       <a href="/yes/<%= users[0].id %>">Yes</a>
