@@ -22,12 +22,14 @@ module.exports = {
           for (let i = 0; i < results.length; i++) {
             let non = false;
             if (user.id != results[i].id) {
-              if (req.session.nonConnections.includes(results[i].id) || user.seeking != results[i].gender) {
+              if (req.session.nonConnections.includes(results[i].id)) {
                 non = true;
               }
               if (!non) {
-                users[results[i].id] = results[i];
-                users[results[i].id].commonInterests = [];
+                if (user.seeking === results[i].gender || user.seeking === "any") {          
+                  users[results[i].id] = results[i];
+                  users[results[i].id].commonInterests = [];
+                }
               }
             }
           }
