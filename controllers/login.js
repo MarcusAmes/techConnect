@@ -40,11 +40,7 @@ module.exports = {
       }, '*').then((results)=>{
         knex('interests')
       .then((options) => {
-        for(key in options){
-         console.log(options[key].interests);
-        }
-         res.render('createProfile', {options: options, user_id: results[0].id}) 
- 
+         console.log(options);
       })
       //res.redirect(`/createprofile/${results[0].id}`)
       })
