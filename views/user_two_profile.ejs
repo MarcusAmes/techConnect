@@ -35,11 +35,11 @@
       <div class="profile_pic_container">
         <img style="border-radius: 10px;" class="dashboard_profile_pic" src="<%= users.img_url%>">
       </div>
-      <h2>Age: <%= users.age %></h2>
-      <p>Bio: <%= users.bio %></p>
-      <h3>Interests:</h3>
+      <h2 class="profile_two_content">Age: <%= users.age %></h2>
+      <p class="profile_two_content">Bio: <%= users.bio %></p>
+      <h3 class="profile_two_content">Interests:</h3>
       <% for(let i = 0; i < interests.length; i++) { %>
-        <p><%= interests[i].interest %></p>
+        <p class="profile_two_content"><%= interests[i].interest %></p>
       <% } %>
     </div>
   </div>
