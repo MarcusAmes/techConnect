@@ -44,6 +44,17 @@
             <input maxlength="5" minlength="5" type="text" name="zipcode"  value="<%=user.zipcode%>">
             <label for="img_url">Image Url: </label>
             <input id="img_url" type="text" name="img_url"  value="<%=user.img_url%>">
+            <select class="browser-default" name="seeking">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="any">Any</option>
+            </select>
+            <label for="gender">Gender:</label>
+            <select class="browser-default" name="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="any">Other</option>
+            </select>
             <div class="login_btn_container">
               <button class="login-btn" type="submit" name="">Submit</button>
             </div>
