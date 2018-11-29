@@ -34,7 +34,8 @@ app.get('/user_two_profile/:id', user_two_profile.index);
 app.get('/matches', connections.matches);
 
 //INTERESTS
-app.get('/interests', interests.index)
+app.get('/interests', interests.index);
+app.post('/interests', interests.add);
 
 
 }

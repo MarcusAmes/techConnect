@@ -38,7 +38,6 @@ module.exports = {
   register: (req, res) => {
     if (req.body.password === req.body.cPassword) {
       hasher.hash(req.body).then((user) => {
-        console.log(user);
         knex('users').insert({
           email: user.email,
           password: user.password,
@@ -51,13 +50,16 @@ module.exports = {
     }
   },
   update: (req, res) => {
-    let {username, fname, lname, bio, age, zipcode, img_url, options} = req.body
     knex('users').update(req.body).where('id', req.params.id).then(() => {
       knex('users').where('id', req.params.id).then((results) => {
         req.session.user = results[0];
-        req.session.nonConnections = [];
         req.session.save(()=>{
-          res.redirect('/dashboard');
+          if(req.session.nonConnections) {
+            res.redirect('/dashboard');
+          } else {
+            req.session.nonConnections = [];
+            res.redirect('/interests')
+          }
         })
       })
     })

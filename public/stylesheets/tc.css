@@ -97,6 +97,9 @@ input:focus {
 button:focus {
   background-color: #ff6f00 !important;
 }
+input:focus + label {
+   color: grey !important;
+ }
 
 
 /* Dashboard */
@@ -249,13 +252,9 @@ align-items: center;
 
 .interest{
     color: black;
-    font-family: 'Miriam Libre', sans-serif;  
+    font-family: 'Miriam Libre', sans-serif;
 }
 
 .interest_editor{
     font-family: 'Miriam Libre', sans-serif;
 }
-
-
-
-

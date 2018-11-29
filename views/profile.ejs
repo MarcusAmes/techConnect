@@ -15,7 +15,7 @@
   <body>
     <nav class="nav_header-container">
       <div class="nav-wrapper">
-        <h3 class="nav-header" style="" >techConnect<i class="fas fa-globe"></i></h3>
+        <h3 class="nav-header" style="" ><a href="/dashboard"> techConnect<i class="fas fa-globe"> </i> </a></h3>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="/dashboard">Dashboard</a></li>
           <li><a href="/matches">Matches</a></li>
@@ -32,20 +32,19 @@
           <img style="border-radius: 10px;" class="dashboard_profile_pic"src="<%= user.img_url%>">
         </div>
           <form class="" action="/update/<%=user.id%>" method="post">
-            <input type="hidden" name="username" value="<%=user.username%>">
-            <label>First Name: </label>
+            <label for="fname">First Name: </label>
             <input type="text" name="fname" value="<%=user.fname%>">
-            <label>Last Name: </label>
+            <label for="lname">Last Name: </label>
             <input type="text" name="lname" value="<%=user.lname%>">
-            <label>Bio: </label>
+            <label for="bio">Bio: </label>
             <textarea name="bio" rows="8" cols="20"><%=user.bio %></textarea>
-            <label>Age: </label>
+            <label for="age">Age: </label>
             <input required type="number" name="age"  value="<%=user.age%>" min="18">
-            <label>Zipcode: </label>
+            <label for="zipcode">Zipcode: </label>
             <input maxlength="5" minlength="5" type="text" name="zipcode"  value="<%=user.zipcode%>">
-            <label>Image Url: </label>
+            <label for="img_url">Image Url: </label>
             <input id="img_url" type="text" name="img_url"  value="<%=user.img_url%>">
-            <div class="login_btn_container">              
+            <div class="login_btn_container">
               <button class="login-btn" type="submit" name="">Submit</button>
             </div>
           </form>

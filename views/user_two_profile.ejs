@@ -4,21 +4,45 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <!-- Compiled and minified CSS -->
+    <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Miriam+Libre" rel="stylesheet">
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   <link rel="stylesheet" href="/static/stylesheets/tc.css">
-          
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
 
 </head>
 <body>
-    <h1>Now Viewing <%= `${users.fname} ${users.lname}` %> Profile</h1>
-        <img src="<%= users.img_url %>" alt="">
-        <h2>Age: <%= users.age %></h2>
-        <h2>Username: <%= users.username %></h2>
-        <h3>Bio: <%= users.bio %></h3>
-    <a href="/dashboard">Return to Home</a>
-   
+  <nav class="nav_header-container">
+      <div class="nav-wrapper">
+        <h3 class="nav-header" style="" > <a href="/dashboard"> techConnect<i class="fas fa-globe"> </i> </a></h3>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/dashboard">Dashboard</a></li>
+          <li><a href="/matches">Matches</a></li>
+          <li><a href="/messages">Messages</a></li>
+          <li><a href="/logout">Logout</a></li>
+          <li><a href="/profile"> <img class="small-image-circle nav-img" src="<%= user.img_url %>" alt="Profile"> </a></li>
+        </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="container">
+      <h1 class="dashboard_fnln fnln_username"><%= `${users.fname} ${users.lname}` %></h1>
+      <h5 class="username fnln_username"><%=users.username%></h5>
+      <div class="profile_pic_container">
+        <img style="border-radius: 10px;" class="dashboard_profile_pic" src="<%= users.img_url%>">
+      </div>
+      <h2>Age: <%= users.age %></h2>
+      <p>Bio: <%= users.bio %></p>
+      <h3>Interests:</h3>
+      <% for(let i = 0; i < interests.length; i++) { %>
+        <p><%= interests[i].interest %></p>
+      <% } %>
+    </div>
+  </div>
+
 </body>
 </html>
