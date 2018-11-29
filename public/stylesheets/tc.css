@@ -239,15 +239,15 @@ align-items: center;
 }
 
 .common_interests{
+    text-align: center;
     font-family: 'Miriam Libre', sans-serif;
 }
 
 .options_container{
-    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0);
-    border: 2px solid black;
     margin-right: 20%;
     margin-left: 20%;
     padding-left: 9%;
+    border-bottom: 2px solid black;
 }
 
 .interest{
@@ -257,4 +257,15 @@ align-items: center;
 
 .interest_editor{
     font-family: 'Miriam Libre', sans-serif;
+    font-size: 2em;
+    text-align: center;
+}
+
+.input_container{
+    display: flex;
+    justify-content: center !important;
+}
+
+.interest_input{
+    width: 50% !important;
 }
