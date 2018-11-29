@@ -83,6 +83,7 @@ body {
     box-shadow: 0px 0px 3px 0px rgba(187, 69, 69, 0) !important;
     transform: scale(1.1);
     width: 30%;
+    margin-bottom: 30px;
 }
 
 textarea {
@@ -152,7 +153,7 @@ button:focus {
 }
 
 .dashboard_profile_pic{
-border-top-left-radius: 20px; 
+border-top-left-radius: 20px;
 border-top-right-radius: 20px;
   height: 300px;
   width: 300px;

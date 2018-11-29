@@ -38,21 +38,22 @@ module.exports = {
         email: req.body.reg_email,
         password: req.body.reg_password,
       }, '*').then((results)=>{
-        knex('interests')
-      .then((options) => {
-        for(key in options){
-         console.log(options[key].interests);
-        }
-         res.render('createProfile', {options: options, user_id: results[0].id}) 
- 
-      })
-      //res.redirect(`/createprofile/${results[0].id}`)
+      //   knex('interests')
+      // .then((options) => {
+      //   for(key in options){
+      //    console.log(options[key].interests);
+      //   }
+      //    res.render('createProfile', {options: options, user_id: results[0].id})
+      //
+      // })
+      res.redirect(`/createprofile/${results[0].id}`)
       })
     } else {
       res.redirect('/register')
     }
   },
   update: (req, res) => {
+    let {username, fname, lname, bio, age, zipcode, img_url, options} = req.body
     knex('users').update(req.body).where('id', req.params.id).then(() => {
       knex('users').where('id', req.params.id).then((results) => {
         req.session.user = results[0];
