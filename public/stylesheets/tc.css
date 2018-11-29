@@ -298,6 +298,12 @@ align-items: center;
     font-size: 2em;
 }
 
+.profile_two_interests{
+    text-align: center;
+    font-family: 'Miriam Libre', sans-serif;
+    font-size: 1.2em;
+}
+
 .nav-img-profile {
   height: 100%;
 }
