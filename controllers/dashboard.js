@@ -22,7 +22,7 @@ module.exports = {
           for (let i = 0; i < results.length; i++) {
             let non = false;
             if (user.id != results[i].id) {
-              if (req.session.nonConnections.includes(results[i].id)) {
+              if (req.session.nonConnections.includes(results[i].id) || user.seeking != results[i].gender) {
                 non = true;
               }
               if (!non) {
@@ -37,14 +37,16 @@ module.exports = {
             let scores = {}
             for (let ind = 0; ind < usersInterests.length; ind++) {
               if(usersInterests[ind]['user_id'] != user.id) {
-                if(req.session.nonConnections.includes(usersInterests[ind]['user_id'])) {
-                  continue;
-                }
-                scores[usersInterests[ind].user_id] = 0;
-                for (let x = 0; x < userInterests.length; x++) {
-                  if (usersInterests[ind].interest.toUpperCase() === userInterests[x].interest.toUpperCase()) {
-                    scores[usersInterests[ind]['user_id']] += 1;
-                    users[usersInterests[ind]['user_id']].commonInterests.push(usersInterests[ind].interest)
+                if (users[usersInterests[ind]['user_id']]) {
+                  if(req.session.nonConnections.includes(usersInterests[ind]['user_id'])) {
+                    continue;
+                  }
+                  scores[usersInterests[ind].user_id] = 0;
+                  for (let x = 0; x < userInterests.length; x++) {
+                    if (usersInterests[ind].interest.toUpperCase() === userInterests[x].interest.toUpperCase()) {
+                      scores[usersInterests[ind]['user_id']] += 1;
+                      users[usersInterests[ind]['user_id']].commonInterests.push(usersInterests[ind].interest)
+                    }
                   }
                 }
               }
