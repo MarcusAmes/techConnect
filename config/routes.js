@@ -4,6 +4,7 @@ const profile = require("../controllers/profile.js");
 const dashboard = require("../controllers/dashboard.js");
 const user_two_profile = require("../controllers/user_two_profile.js");
 const connections = require("../controllers/connections.js");
+const interests = require("../controllers/interests.js");
 module.exports = function(app){
 
   //LOGIN AND REGISTER
@@ -31,6 +32,10 @@ app.get('/user_two_profile/:id', user_two_profile.index);
 
 //MATCHES
 app.get('/matches', connections.matches);
+
+//INTERESTS
+app.get('/interests', interests.index)
+
 
 }
 
