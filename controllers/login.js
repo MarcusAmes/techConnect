@@ -38,7 +38,15 @@ module.exports = {
         email: req.body.reg_email,
         password: req.body.reg_password,
       }, '*').then((results)=>{
-        res.redirect(`/createprofile/${results[0].id}`)
+        knex('interests')
+      .then((options) => {
+        for(key in options){
+         console.log(options[key].interests);
+        }
+         res.render('createProfile', {options: options, user_id: results[0].id}) 
+ 
+      })
+      //res.redirect(`/createprofile/${results[0].id}`)
       })
     } else {
       res.redirect('/register')

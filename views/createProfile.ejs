@@ -28,7 +28,18 @@
             <input class="col s12" required type="number" name="age" placeholder="Age" min="18">
             <input required class="col s12" maxlength="5" minlength="5" type="text" name="zipcode" placeholder="ZipCode">
             <input class="col s12" id="img_url" type="text" name="img_url" placeholder="img_url">
-          </div>
+            <select name="options" id="interests" class="browser-default">
+          <option value='<%=options.id%>'>Javascript</option>
+          <option value='<%=options.id%>'>HTML</option>
+          <option value='<%=options.id%>'>React</option>
+          <option value='<%=options.id%>'>Redux</option>
+          <option value='<%=options.id%>'>Vue</option>
+          <option value='<%=options.id%>'>Angular</option>
+          <option value='<%=options.id%>'>PHPue</option>
+          <option value='<%=options.id%>'>MySQL</option>
+          <option value='<%=options.id%>'>Postres</option>
+         </select> 
+            </div>
           <div class="login_btn_container">
             <button class="login-btn" type="submit" name="">Submit</button>
           </div>

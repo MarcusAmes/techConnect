@@ -51,6 +51,7 @@
     
     <div class="container">
     <form class="" action="/update/<%=user.id%>" method="post">
+    <input type="hidden" name="fname" value="<%=user.username%>">
      <label>First Name: <input type="text" name="fname" value="<%=user.fname%>">
       </label><label>Last Name: <input type="text" name="lname" value="<%=user.lname%>">
      </label><label><div class="bio"> Bio: </div><textarea name="bio" rows="8" cols="20"><%=user.bio %></textarea>
