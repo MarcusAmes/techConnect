@@ -269,3 +269,24 @@ align-items: center;
 .interest_input{
     width: 50% !important;
 }
+
+
+
+
+
+
+
+.match_content{
+    font-family: 'Miriam Libre', sans-serif;
+}
+
+.no_more{
+    font-family: 'Miriam Libre', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.pic_user_container{
+    display: flex;
+    align-items: center;
+}

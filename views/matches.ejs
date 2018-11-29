@@ -37,14 +37,16 @@
     <% if (confirmedMatches.length >= 1) {
       for (let i = 0; i < confirmedMatches.length; i++) { %>
         <div class="match">
-          <h4><%= confirmedMatches[i].username %></h4>
-          <img class="small-image-circle" src="<%= confirmedMatches[i].img_url %>" alt="Profile Image">
-          <h5>Age: <%= confirmedMatches[i].age %></h5>
-          <p><%= confirmedMatches[i].bio %></p>
+          <div class="pic_user_container">
+            <img class="small-image-circle" src="<%= confirmedMatches[i].img_url %>" alt="Profile Image">
+            <h4 class="match_content"><%= confirmedMatches[i].username %></h4>
+        </div>
+          <h5 class="match_content">Age: <%= confirmedMatches[i].age %></h5>
+          <p class="match_content"><%= confirmedMatches[i].bio %></p>
         </div>
       <% }
     } else { %>
-      <h1>You don't have any matches yet!</h1>
+      <h1 class="no_more">You don't have any matches yet!</h1>
     <% } %>
   </body>
 </html>
