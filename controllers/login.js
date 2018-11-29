@@ -1,4 +1,5 @@
 const knex = require("../db/knex.js");
+const hasher = require("../config/hasher.js");
 
 module.exports = {
   // CHANGE ME TO AN ACTUAL FUNCTION
@@ -15,40 +16,42 @@ module.exports = {
     res.render("createProfile", {user_id: req.params.id});
   },
   login: (req, res) => {
-    knex('users').where('username', req.body.log_username).then((results) => {
+    knex('users').where('username', req.body.username).then((results) => {
       if (results.length >= 1) {
         let user = results[0]
-        if(user.password === req.body.log_password) {
-          req.session.user = user;
-          req.session.nonConnections = [];
-          req.session.save(()=>{
-            res.redirect('/dashboard');
-          })
-        } else {
-          res.redirect('/login');
-        }
+        hasher.check(user, req.body).then((isMatch) => {
+          if(isMatch) {
+            req.session.user = user;
+            req.session.nonConnections = [];
+            req.session.save(()=>{
+              res.redirect('/dashboard');
+            })
+          } else {
+            res.redirect('/login');
+          }
+        })
       } else {
         res.redirect('/login');
       }
     })
   },
   register: (req, res) => {
-    if (req.body.reg_password === req.body.reg_cPassword) {
-      knex('users').insert({
-        email: req.body.reg_email,
-        password: req.body.reg_password,
-      }, '*').then((results)=>{
-        knex('interests')
-      .then((options) => {
-         console.log(options);
-      })
-      //res.redirect(`/createprofile/${results[0].id}`)
+    if (req.body.password === req.body.cPassword) {
+      hasher.hash(req.body).then((user) => {
+        console.log(user);
+        knex('users').insert({
+          email: user.email,
+          password: user.password,
+        }, '*').then((results)=>{
+          res.redirect(`/createprofile/${results[0].id}`)
+        })
       })
     } else {
       res.redirect('/register')
     }
   },
   update: (req, res) => {
+    let {username, fname, lname, bio, age, zipcode, img_url, options} = req.body
     knex('users').update(req.body).where('id', req.params.id).then(() => {
       knex('users').where('id', req.params.id).then((results) => {
         req.session.user = results[0];

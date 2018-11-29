@@ -3,73 +3,65 @@
   <head>
     <meta charset="utf-8">
     <title>Profile</title>
-<!-- Compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Miriam+Libre" rel="stylesheet">
 
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
-<link rel="stylesheet" href="/static/stylesheets/tc.css">
-        
-
-    <style>
-        .container, h3{
-          width:300px;
-          dispaly:block;
-          
-          margin:0 auto;
-        }
-        label{position:relative;
-        float:left;}
-        input{
-          align-items:left;
-          margin:4;
-        }
-         img{}
-         button{border-radius:6px;
-         background-color:#333;
-         color:#fff;  
-          margin-top:7px;
-        position:relative;
-      width:100px;      }
-  
-      button:hover{
-      background-color:#ccc;
-      color:#000;
-   }
-   .bio{
-     position:relative;
-     float:left;
-     top:-2px;
-   }
-   textarea{margin-top:4px; margin-left:40px;}
-    </style>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="/static/stylesheets/tc.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   </head>
   <body>
-    
-    <p><h3><%= user.username %></h3></p>
-    <p><img src="<%= user.img_url%>" height="100" width="100">
-    
+    <nav class="nav_header-container">
+      <div class="nav-wrapper">
+        <h3 class="nav-header" style="" >techConnect<i class="fas fa-globe"></i></h3>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/dashboard">Dashboard</a></li>
+          <li><a href="/matches">Matches</a></li>
+          <li><a href="/messages">Messages</a></li>
+          <li><a href="/logout">Logout</a></li>
+          <li class="active"><a href="/profile"> <img class="small-image-circle nav-img" src="<%= user.img_url %>" alt="Profile"> </a></li>
+        </ul>
+      </div>
+    </nav>
     <div class="container">
-    <form class="" action="/update/<%=user.id%>" method="post">
-    <input type="hidden" name="username" value="<%=user.username%>">
-     <label>First Name: <input type="text" name="fname" value="<%=user.fname%>">
-      </label><label>Last Name: <input type="text" name="lname" value="<%=user.lname%>">
-     </label><label><div class="bio"> Bio: </div><textarea name="bio" rows="8" cols="20"><%=user.bio %></textarea>
-     </label><label>Age: <input required type="number" name="age"  value="<%=user.age%>" min="18">
-     </label><label>Zipcode: <input maxlength="5" minlength="5" type="text" name="zipcode"  value="<%=user.zipcode%>">
-     </label><label>Image Url:<input id="img_url" type="text" name="img_url"  value="<%=user.img_url%>">
-      <button type="submit" name="">Submit</button>
-    </form>
-  </div>
-  <script type="text/javascript">
-    const myForm = document.querySelector('form');
+      <div class="container">
+        <h3 class="center"><%= user.username %></h3>
+        <div class="profile_pic_container">
+          <img style="border-radius: 10px;" class="dashboard_profile_pic"src="<%= user.img_url%>">
+        </div>
+          <form class="" action="/update/<%=user.id%>" method="post">
+            <input type="hidden" name="username" value="<%=user.username%>">
+            <label>First Name: </label>
+            <input type="text" name="fname" value="<%=user.fname%>">
+            <label>Last Name: </label>
+            <input type="text" name="lname" value="<%=user.lname%>">
+            <label>Bio: </label>
+            <textarea name="bio" rows="8" cols="20"><%=user.bio %></textarea>
+            <label>Age: </label>
+            <input required type="number" name="age"  value="<%=user.age%>" min="18">
+            <label>Zipcode: </label>
+            <input maxlength="5" minlength="5" type="text" name="zipcode"  value="<%=user.zipcode%>">
+            <label>Image Url: </label>
+            <input id="img_url" type="text" name="img_url"  value="<%=user.img_url%>">
+            <div class="login_btn_container">              
+              <button class="login-btn" type="submit" name="">Submit</button>
+            </div>
+          </form>
+        </div>
+    </div>
 
-    myForm.addEventListener('submit', function () {
-      let input = myForm.querySelector('#img_url');
-      if (!input.value) {
-        input.name = '';
-      }
-    });
 
+    <script type="text/javascript">
+      const myForm = document.querySelector('form');
+
+      myForm.addEventListener('submit', function () {
+        let input = myForm.querySelector('#img_url');
+        if (!input.value) {
+          input.name = '';
+        }
+      });
+    </script>
   </body>
 </html>

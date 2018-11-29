@@ -26,20 +26,9 @@
             <input class="col s12" type="text" name="lname" placeholder="Last Name">
             <textarea class="" name="bio" rows="12" cols="60" placeholder="Bio"></textarea>
             <input class="col s12" required type="number" name="age" placeholder="Age" min="18">
-            <input required class="col s12" maxlength="5" minlength="5" type="text" name="zipcode" placeholder="ZipCode">
-            <input class="col s12" id="img_url" type="text" name="img_url" placeholder="img_url">
-            <select name="options" id="interests" class="browser-default">
-          <option value='<%=options.id%>'>Javascript</option>
-          <option value='<%=options.id%>'>HTML</option>
-          <option value='<%=options.id%>'>React</option>
-          <option value='<%=options.id%>'>Redux</option>
-          <option value='<%=options.id%>'>Vue</option>
-          <option value='<%=options.id%>'>Angular</option>
-          <option value='<%=options.id%>'>PHPue</option>
-          <option value='<%=options.id%>'>MySQL</option>
-          <option value='<%=options.id%>'>Postres</option>
-         </select> 
-            </div>
+            <input class="col s12" maxlength="5" minlength="5" type="text" name="zipcode" placeholder="ZipCode">
+            <input class="col s12" id="img_url" type="text" name="img_url" placeholder="Image URL">
+          </div>
           <div class="login_btn_container">
             <button class="login-btn" type="submit" name="">Submit</button>
           </div>
@@ -50,9 +39,12 @@
       const myForm = document.querySelector('form');
 
       myForm.addEventListener('submit', function () {
-        let input = myForm.querySelector('#img_url');
-        if (!input.value) {
-          input.name = '';
+        let inputs = myForm.querySelectorAll('input');
+        console.log(inputs);
+        for (let i = 0; i < inputs.length; i++) {
+          if (!inputs[i].value) {
+            inputs[i].name = '';
+          }
         }
       });
     </script>

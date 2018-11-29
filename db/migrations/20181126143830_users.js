@@ -10,7 +10,9 @@ exports.up = function(knex, Promise) {
       table.text("bio");
       table.integer("age");
       table.string("zipcode");
-      table.text('img_url').defaultTo('https://www.bsn.eu/wp-content/uploads/2016/12/user-icon-image-placeholder.jpg')
+      table.text('img_url').defaultTo('https://www.bsn.eu/wp-content/uploads/2016/12/user-icon-image-placeholder.jpg');
+      table.string('gender');
+      table.string('seeking');
       table.timestamps(true, true);
       })
     };
