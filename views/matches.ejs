@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Profile</title>
+    <title>Matches</title>
     <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/css?family=Miriam+Libre" rel="stylesheet">
@@ -15,8 +15,13 @@
   <style media="screen">
     .match {
       border: 1px solid black;
+      border-radius: 10px;
+      box-shadow: 3px 3px 10px black;
       margin: 30px;
       padding: 5px;
+    }
+    .match:hover {
+      box-shadow: 6px 6px 10px black;
     }
   </style>
 
@@ -35,14 +40,16 @@
     </nav>
     <% if (confirmedMatches.length >= 1) {
       for (let i = 0; i < confirmedMatches.length; i++) { %>
-        <div class="match">
-          <div class="pic_user_container">
-            <img class="small-image-circle" src="<%= confirmedMatches[i].img_url %>" alt="Profile Image">
-            <h4 class="match_content"><%= confirmedMatches[i].username %></h4>
-        </div>
-          <h5 class="match_content">Age: <%= confirmedMatches[i].age %></h5>
-          <p class="match_content"><%= confirmedMatches[i].bio %></p>
-        </div>
+        <a style="text-decoration: none; color: inherit;"href="/user_two_profile/<%= confirmedMatches[i].id %>">
+          <div class="match">
+            <div class="pic_user_container">
+              <img class="small-image-circle" src="<%= confirmedMatches[i].img_url %>" alt="Profile Image">
+              <h4 class="match_content"><%= confirmedMatches[i].username %></h4>
+          </div>
+            <h5 class="match_content">Age: <%= confirmedMatches[i].age %></h5>
+            <p class="match_content"><%= confirmedMatches[i].bio %></p>
+          </div>
+        </a>
       <% }
     } else { %>
       <h1 class="no_more">You don't have any matches yet!</h1>
