@@ -40,15 +40,11 @@ exports.seed = function(knex, Promise) {
         {interest: "Vue.js", user_id: 8},
         {interest: "CSS", user_id: 13},
         {interest: "Javascript", user_id: 14},
-<<<<<<< HEAD
-        {interest: "Python", user_id: 15}
-=======
         {interest: "Python", user_id: 15},
         {interest: "Python", user_id: 4},
         {interest: "Python", user_id: 3},
         {interest: "Python", user_id: 11},
         {interest: "Python", user_id: 6},
->>>>>>> c8dee8467e3d6dae19a01df44c48606e8a567e95
       ]);
     });
 };
