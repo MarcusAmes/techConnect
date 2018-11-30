@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <title>Create Profile</title>
     <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
   <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <link rel="stylesheet" href="/static/stylesheets/tc.css">
   <link href="https://fonts.googleapis.com/css?family=Miriam+Libre" rel="stylesheet">
 
@@ -21,25 +21,52 @@
         </div>
         <form action="/update/<%=user_id%>" method="post">
           <div class="container">
-            <input class="col s12" required type="text" name="username" placeholder="Username">
-            <input class="col s12" type="text" name="fname" placeholder="First Name">
-            <input class="col s12" type="text" name="lname" placeholder="Last Name">
-            <textarea class="" name="bio" rows="12" cols="60" placeholder="Bio"></textarea>
-            <input class="col s12" required type="number" name="age" placeholder="Age" min="18">
-            <input class="col s12" maxlength="5" minlength="5" type="text" name="zipcode" placeholder="ZipCode">
-            <input class="col s12" id="img_url" type="text" name="img_url" placeholder="Image URL">
-            <label for="seeking">Seeking:</label>
-            <select class="browser-default" name="seeking">
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="any">Any</option>
-            </select>
-            <label for="gender">Gender:</label>
-            <select class="browser-default" name="gender">
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="any">Other</option>
-            </select>
+            <div class="input-field col s6">
+              <input required type="text" name="username">
+              <label for="username">Username</label>
+            </div>
+            <div class="input-field col s6">
+              <input type="text" name="fname">
+              <label for="fname">First Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input type="text" name="lname">
+              <label for="lname">Last Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input required min="18"type="number" name="age">
+              <label for="age">Age</label>
+            </div>
+            <div class="input-field col s6">
+              <input required maxlength="5" minlength="5" type="text" name="zipcode">
+              <label for="zipcode">ZipCode</label>
+            </div>
+            <div class="input-field col s6">
+              <input type="text" name="img_url">
+              <label for="img_url">Image URL</label>
+            </div>
+            <div class="input-field col s12">
+              <textarea class="materialize-textarea" name="bio"></textarea>
+              <label for="bio">Bio</label>
+            </div>
+            <div class="input-field col s12">
+              <select class="" name="seeking">
+                <option value="" disabled selected>Select an option</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="any">Any</option>
+              </select>
+              <label for="seeking">Seeking:</label>
+            </div>
+            <div class="input-field col s12">
+              <select class="" name="gender">
+                <option value="" disabled selected>Select an option</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="any">Other</option>
+              </select>
+              <label for="gender">Gender:</label>
+            </div>
           </div>
           <div class="login_btn_container">
             <button class="login-btn" type="submit" name="">Submit</button>
@@ -48,6 +75,10 @@
       </div>
     </div>
     <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems, {});
+    });
       const myForm = document.querySelector('form');
 
       myForm.addEventListener('submit', function () {
