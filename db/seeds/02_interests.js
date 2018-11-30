@@ -19,7 +19,7 @@ exports.seed = function(knex, Promise) {
         {interest: "Vue.js", user_id: 12},
         {interest: "CSS", user_id: 13},
         {interest: "Javascript", user_id: 14},
-        {interest: "Python", user_id: 15},
+        {interest: "Python", user_id: 15}
       ]);
     });
 };
