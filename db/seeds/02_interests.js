@@ -14,7 +14,12 @@ exports.seed = function(knex, Promise) {
         {interest: "Angular.js", user_id: 7},
         {interest: "Python", user_id: 8},
         {interest: "Ruby", user_id: 9},
-        {interest: "Swift", user_id: 10}
+        {interest: "Swift", user_id: 10},
+        {interest: "C++", user_id: 11},
+        {interest: "Vue.js", user_id: 12},
+        {interest: "CSS", user_id: 13},
+        {interest: "Javascript", user_id: 14},
+        {interest: "Python", user_id: 15},
       ]);
     });
 };
