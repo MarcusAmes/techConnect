@@ -173,6 +173,8 @@ border-top-left-radius: 20px;
 border-top-right-radius: 20px;
   height: 300px;
   width: 300px;
+  box-shadow: 3px 3px 10px black;
+
 }
 
 .user_age{
@@ -198,6 +200,12 @@ color: white;
     font-size: 4em;
     padding: 5px 10px;
     border-radius: 10px;
+    box-shadow: 3px 3px 10px black;
+}
+
+.yesno:hover {
+  box-shadow: 6px 6px 10px black;
+
 }
 
 
@@ -223,6 +231,7 @@ background-color: #546e7a;
 display: flex;
 justify-content: space-around;
 align-items: center;
+box-shadow: 3px 3px 10px black;
 }
 
 
