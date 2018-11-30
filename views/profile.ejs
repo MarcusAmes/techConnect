@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <title>Profile</title>
     <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/css?family=Miriam+Libre" rel="stylesheet">
 
   <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
   <link rel="stylesheet" href="/static/stylesheets/tc.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   </head>
@@ -16,12 +17,11 @@
     <nav class="nav_header-container">
       <div class="nav-wrapper">
         <h3 class="nav-header" style="" ><a href="/dashboard"> techConnect<i class="fas fa-globe"> </i> </a></h3>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <ul id="nav-mobile" class="right hide-on-med-and-down nav-img-profile">
           <li><a href="/dashboard">Dashboard</a></li>
           <li><a href="/matches">Matches</a></li>
-          <li><a href="/messages">Messages</a></li>
           <li><a href="/logout">Logout</a></li>
-          <li class="active"><a href="/profile"> <img class="small-image-circle nav-img" src="<%= user.img_url %>" alt="Profile"> </a></li>
+          <li class="active nav-img-profile"><a class="nav-img-profile" href="/profile"> <img class="small-image-circle nav-img" src="<%= user.img_url %>" alt="Profile"> </a></li>
         </ul>
       </div>
     </nav>
@@ -31,44 +31,58 @@
         <div class="profile_pic_container">
           <img style="border-radius: 10px;" class="dashboard_profile_pic"src="<%= user.img_url%>">
         </div>
-          <form class="" action="/update/<%=user.id%>" method="post">
-            <label for="fname">First Name: </label>
-            <input type="text" name="fname" value="<%=user.fname%>">
-            <label for="lname">Last Name: </label>
-            <input type="text" name="lname" value="<%=user.lname%>">
-            <label for="bio">Bio: </label>
-            <textarea name="bio" rows="8" cols="20"><%=user.bio %></textarea>
-            <label for="age">Age: </label>
-            <input required type="number" name="age"  value="<%=user.age%>" min="18">
-            <label for="zipcode">Zipcode: </label>
-            <input maxlength="5" minlength="5" type="text" name="zipcode"  value="<%=user.zipcode%>">
-            <label for="img_url">Image Url: </label>
-            <input id="img_url" type="text" name="img_url"  value="<%=user.img_url%>">
-            <select class="browser-default" name="seeking">
+        <form class="" action="/update/<%=user.id%>" method="post">
+          <label for="fname">First Name: </label>
+          <input type="text" name="fname" value="<%=user.fname%>">
+          <label for="lname">Last Name: </label>
+          <input type="text" name="lname" value="<%=user.lname%>">
+          <div class="input-field col s12">
+            <textarea class="materialize-textarea" name="bio"><%= user.bio %></textarea>
+            <label for="bio">Bio</label>
+          </div>
+          <label for="age">Age: </label>
+          <input required type="number" name="age"  value="<%=user.age%>" min="18">
+          <label for="zipcode">Zipcode: </label>
+          <input maxlength="5" minlength="5" type="text" name="zipcode"  value="<%=user.zipcode%>">
+          <label for="img_url">Image Url: </label>
+          <input id="img_url" type="text" name="img_url"  value="<%=user.img_url%>">
+          <div class="input-field col s12">
+            <select class="" name="seeking">
+              <option value="" disabled selected>Select an option</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
               <option value="any">Any</option>
             </select>
-            <label for="gender">Gender:</label>
-            <select class="browser-default" name="gender">
+            <label for="seeking">Seeking:</label>
+          </div>
+          <div class="input-field col s12">
+            <select class="" name="gender">
+              <option value="" disabled selected>Select an option</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
               <option value="any">Other</option>
             </select>
-            <div class="login_btn_container">
-              <button class="login-btn" type="submit" name="">Submit</button>
-            </div>
-          </form>
-        </div>
+            <label for="gender">Gender:</label>
+          </div>
+          <div class="login_btn_container">
+            <button class="login-btn" type="submit" name="">Submit</button>
+          </div>
+        </form>
+      </div>
     </div>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems, {});
+    });
+
       const myForm = document.querySelector('form');
 
       myForm.addEventListener('submit', function () {
         let input = myForm.querySelector('#img_url');
-        if (!input.value) {
+        if (!input.value || input.value === "") {
           input.name = '';
         }
       });

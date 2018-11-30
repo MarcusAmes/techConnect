@@ -19,12 +19,11 @@
   <nav class="nav_header-container">
       <div class="nav-wrapper">
         <h3 class="nav-header" style="" > <a href="/dashboard"> techConnect<i class="fas fa-globe"> </i> </a></h3>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <ul id="nav-mobile" class="right hide-on-med-and-down nav-img-profile">
           <li><a href="/dashboard">Dashboard</a></li>
           <li><a href="/matches">Matches</a></li>
-          <li><a href="/messages">Messages</a></li>
           <li><a href="/logout">Logout</a></li>
-          <li><a href="/profile"> <img class="small-image-circle nav-img" src="<%= user.img_url %>" alt="Profile"> </a></li>
+          <li class="nav-img-profile"><a class="nav-img-profile" href="/profile"> <img class="small-image-circle nav-img" src="<%= user.img_url %>" alt="Profile"> </a></li>
         </ul>
     </div>
   </nav>
@@ -39,7 +38,7 @@
       <p class="profile_two_content">Bio: <%= users.bio %></p>
       <h3 class="profile_two_content">Interests:</h3>
       <% for(let i = 0; i < interests.length; i++) { %>
-        <p class="profile_two_content"><%= interests[i].interest %></p>
+        <p class="profile_two_interests"><%= interests[i].interest %></p>
       <% } %>
     </div>
   </div>

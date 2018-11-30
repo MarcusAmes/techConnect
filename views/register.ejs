@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <title>Register</title>
     <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
   <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <link rel="stylesheet" href="/static/stylesheets/tc.css">
   <link href="https://fonts.googleapis.com/css?family=Miriam+Libre" rel="stylesheet">
 
@@ -21,9 +21,18 @@
         </div>
         <form action="/register" method="post">
           <div class="container">
-            <input class="col s12" required type="email" name="email" placeholder="Email">
-            <input class="col s12" required type="password" name="password" placeholder="Password">
-            <input class="col s12" required type="password" name="cPassword" placeholder="Confirm Password">
+            <div required class="input-field col s6">
+              <input type="email" name="email">
+              <label for="email">Email</label>
+            </div>
+            <div class="input-field col s6">
+              <input required type="password" name="password">
+              <label for="password">Password</label>
+            </div>
+            <div class="input-field col s6">
+              <input required type="password" name="cPassword">
+              <label for="cPassword">Confirm Password</label>
+            </div>
           </div>
           <div class="login_btn_container">
             <button class="login-btn" type="submit" name="">Submit</button>

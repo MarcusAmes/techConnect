@@ -92,14 +92,27 @@ textarea {
 
 input:focus {
   border-bottom-color: #ff6f00 !important;
+  color: #ff6f00 !important;
+}
+textarea:focus {
+  border-bottom-color: #ff6f00 !important;
+  color: #ff6f00 !important;
+}
+
+textarea:focus + label {
+  color: #ff6f00 !important;
 }
 
 button:focus {
   background-color: #ff6f00 !important;
 }
 input:focus + label {
-   color: grey !important;
+   color: #ff6f00 !important;
  }
+
+ ul.dropdown-content.select-dropdown li span {
+    color: #ff6f00;
+}
 
 
 /* Dashboard */
@@ -298,6 +311,12 @@ align-items: center;
     font-size: 2em;
 }
 
+.profile_two_interests{
+    text-align: center;
+    font-family: 'Miriam Libre', sans-serif;
+    font-size: 1.2em;
+}
 
-
-
+.nav-img-profile {
+  height: 100%;
+}
